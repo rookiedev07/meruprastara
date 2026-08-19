@@ -2,7 +2,7 @@
   "rewrites": [
     {
       "source": "/api/:path*",
-      "destination": "https://meru-prastara-backend.onrender.com/api/:path*"
+      "destination": "https://meruprastara.onrender.com/api/:path*"
     },
     {
       "source": "/(.*)",
