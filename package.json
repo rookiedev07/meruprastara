@@ -1,0 +1,20 @@
+{
+  "name": "meru-prastara-memoization-system",
+  "version": "1.0.0",
+  "description": "Meru-Prastāra Memoization Demonstration System — MERN Stack Implementation",
+  "main": "server/server.js",
+  "scripts": {
+    "setup": "npm install && npm --prefix server install && npm --prefix client install",
+    "server": "npm --prefix server start",
+    "server:dev": "npm --prefix server run dev",
+    "client": "npm --prefix client run dev",
+    "dev": "concurrently \"npm run server:dev\" \"npm run client\"",
+    "seed": "npm --prefix server run seed",
+    "test": "npm --prefix server test"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "author": "TYCS IKSCS Project",
+  "license": "ISC"
+}

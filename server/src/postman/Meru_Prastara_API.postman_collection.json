@@ -1,0 +1,160 @@
+{
+  "info": {
+    "_postman_id": "meru-prastara-api-collection-v1",
+    "name": "Meru-Prastāra Memoization System REST API",
+    "description": "Complete REST API collection for Meru-Prastāra demonstration system, engines, benchmarking, and historical notes.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "1. Generate Meru-Prastāra Triangle",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"n\": 6\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/meru/generate",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "meru", "generate"]
+        }
+      }
+    },
+    {
+      "name": "2. Naive Recursive Computation C(n,r)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"n\": 6,\n  \"r\": 3\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/compute/naive",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "compute", "naive"]
+        }
+      }
+    },
+    {
+      "name": "3. Memoized Computation C(n,r)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"n\": 12,\n  \"r\": 6\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/compute/memo",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "compute", "memo"]
+        }
+      }
+    },
+    {
+      "name": "4. Tabulation DP Computation C(n,r)",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"n\": 15,\n  \"r\": 7\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/compute/tabulation",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "compute", "tabulation"]
+        }
+      }
+    },
+    {
+      "name": "5. Compare Benchmark Across 3 Modes",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"n\": 15,\n  \"r\": 7\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/benchmark/compare",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "benchmark", "compare"]
+        }
+      }
+    },
+    {
+      "name": "6. Get Historical Chandas Articles",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/chandas/notes",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "chandas", "notes"]
+        }
+      }
+    },
+    {
+      "name": "7. Register User Account",
+      "request": {
+        "method": "POST",
+        "header": [
+          { "key": "Content-Type", "value": "application/json" }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"name\": \"Sanskrit Scholar\",\n  \"email\": \"scholar@meru.edu\",\n  \"password\": \"pass1234\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/auth/register",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "auth", "register"]
+        }
+      }
+    },
+    {
+      "name": "8. Admin Analytics Dashboard",
+      "request": {
+        "method": "GET",
+        "header": [
+          { "key": "Authorization", "value": "Bearer {{jwt_token}}" }
+        ],
+        "url": {
+          "raw": "http://localhost:5000/api/admin/analytics",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "admin", "analytics"]
+        }
+      }
+    }
+  ]
+}
